@@ -1,0 +1,8 @@
+server:
+  port: 8190
+  servlet:
+    context-path: /githubRest
+
+github:
+  api:
+    url: https://api.github.com
