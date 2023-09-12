@@ -20,7 +20,7 @@ public class GithubRestController {
 
     @GetMapping(value = "/repositories/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Get data in JSON format", produces = "application/json")
-    public ResponseEntity<Object> getGithubRepositories(
+    public ResponseEntity<GithubRepositoriesResponse> getGithubRepositories(
             @PathVariable String username)
              {
 
@@ -31,7 +31,7 @@ public class GithubRestController {
 
     @GetMapping(value = "/repositories/{username}", produces = MediaType.APPLICATION_XML_VALUE)
     @ApiOperation(value = "Get data in XML format", produces = "application/xml")
-    public ResponseEntity<Object> getGithubRepositoriesXml(
+    public ResponseEntity<GithubRepositoriesResponse> getGithubRepositoriesXml(
             @PathVariable String username)
     {
 

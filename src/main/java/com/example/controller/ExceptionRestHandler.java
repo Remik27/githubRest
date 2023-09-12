@@ -39,4 +39,14 @@ public class ExceptionRestHandler {
                         .message(exception.getMessage())
                         .build());
     }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> somethingWentWrong(final Exception exception){
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(ExceptionMessage.builder()
+                        .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                        .message(exception.getMessage())
+                        .build());
+    }
 }
